@@ -1,2 +1,2 @@
-# syou
-IT開発演習２
+# otakoki
+太田航希
