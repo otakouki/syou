@@ -1,0 +1,138 @@
+【Genre1テーブル(大まかなジャンル用のテーブル) 】
+
+GenreNo int(3)
+大まかなジャンルを表す数値の列　例 スポーツ Genreno =1 その他 Genreno = 15などに設定する
+※主キー制約
+
+Questionnaire varchar(10)
+アンケートの結果用
+
+GanreName varchar(20)
+大まかなジャンルの名前
+
+Age_Between_max
+オススメする年齢の最小値
+
+AgeBetween_min int(3)
+オススメする年齢の最大値
+
+img varchar(30)
+画像のパスを文字列で格納する 例　xxxxx/xxxxx/img
+
+
+
+
+【Genre2テーブル(具体的な趣味名などが格納されるテーブル)】
+
+GenreNo (3)
+Genre1のGenreNoと結合するた用の列
+※Genre1へのGenreNoへの参照制約をつける
+
+SubGenre　int(3)
+趣味の種別
+    ※Typeテーブルのtypeidへの参照制約
+    例　体を動かす趣味
+　　バスケットボール=10 //大まかなジャンル"スポーツ"
+    サバイバルゲーム=10 //大まかなジャンル"その他"
+
+id int(3)
+趣味への一意な番号が格納される
+※主キー制約
+
+例
+バスケットボール=1
+
+Name varchar(20)
+趣味名が格納される
+
+Description　varchar(50)
+趣味への説明が格納される
+
+CommunityLink varchar(30)
+その趣味の掲示板へのリンクを文字列で格納する
+
+
+
+
+【Usersテーブル(ユーザのログインID、パスワードを格納)】
+id int(3)
+※主キー制約
+※autoincrement
+
+id UserName varchar(256)
+※notnull
+乱数で一意なIDを発行して格納する
+
+nickname varchar(15)
+※デフォルトNULL
+※ユーザーが任意にニックネームを設定できる
+
+
+
+【LikeListテーブル(お気に入りした趣味のId、ユーザのidを格納)】
+id int (3)
+※Usersテーブルのidへの参照制約
+
+Likeid　int(3)
+※Genre2表のidへの参照制約
+
+【Typeテーブル(趣味の特徴を一意な番号と説明で格納する)】
+Typeid int(3)
+※主キー制約
+
+TypeDescription ()
+例　体を動かす趣味
+　　TypeId=10
+　　家で遊べる
+    Typeid=20など
+
+
+
+
+
+
+10/26更新
+【QAテーブル(QAページに必要な情報を格納する)】
+
+大ジャンル(スポーツなど)
+MainGenre
+Genre1テーブルのGenreNoを参照する
+
+小ジャンル(サッカー)
+genre2テーブルのid列を参照する
+
+ユーザーID
+usersテーブルのid列を参照する
+
+Anonymous CHAR(1)
+※Y または Nのみ格納できる
+匿名で表示するかどうか判断する
+
+Qno列 int(3)
+※autoincrement
+※UNIQUE
+※NOTNULL
+投稿を管理する一意な番号
+
+To列 int(3)
+※デフォルトNULL
+どの投稿に対しての返信か
+誰かの投稿に返信する場合そのQnoを格納する
+
+Likecnt int(5)
+投稿に対してのいいね数を格納する
+
+日付 date
+投稿された時点での日付を格納する
+
+
+
+
+
+
+
+
+
+
+
+	
