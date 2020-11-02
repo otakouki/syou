@@ -1,0 +1,66 @@
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>IT開発Q&A</title>
+    <!-- 画面の大きさ調整 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="css/IT2.css">
+  </head>
+  <body>
+    <!-- ヘッダー 上部のバーを表示する -->
+    <header>
+      <!-- ジャンルタイトルを表示する -->
+        <div class="menutop">
+          <h1>
+            <a>Q&A</a>
+          </h1>
+        </div>
+    <nav>
+      <div class="collapse navbar-collapse" id="Navber">
+        <!-- メニューバー 他の画面との行き来をする-->
+      <ul>
+        <li class="current"><a href=>ホーム</a></li>
+        <li><a href=”#”>Q&A</a></li>
+      </ul>
+    </nav>
+    </header>
+
+    <!-- 質問ブロック -->
+    <!-- javascript -->
+    <!-- n件づつ取得 -->
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+     <script type="text/javascript" src="js/IT1.js"></script>
+
+    <!-- 質問があれば以下に表示していく -->
+    <div id="number_list">
+       <ul class="list">
+         <!-- 質問ボックス要素(質問内容、回答一つ、全回答表示ボタン) -->
+         <li><div class="request">
+              質問内容
+            </div>
+            <div class="questbox">
+              回答内容
+            </div>
+            <div class="allquesutbox">
+              全ての回答内容
+            </div>
+
+         </li>
+         <li>2</li>
+         <li>3</li>
+         <li>4</li>
+         <li>5</li>
+         <li>6</li>
+         <li>7</li>
+         <li>8</li>
+         <li>9</li>
+         <li>10</li>
+       </ul>
+      <!-- スワイプで表示するようにする -->
+       <button type=button id="more_btn">もっと見る</button>
+       <button type=button id="close_btn">表示数を戻す</button>
+    </div>
+  </body>
+</html>
