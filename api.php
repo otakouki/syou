@@ -7,16 +7,17 @@ define('PASSWORD', 'syou_it_kaihatu');
 
 try {
   /// DB接続を試みる
+
   $dbh  = new PDO('mysql:host=' . HOSTNAME . ';dbname=' . DATABASE, USERNAME, PASSWORD);
   $msg = "MySQL への接続確認が取れました。";
-  $keyword = htmlspecialchars($_GET['id'], ENT_QUOTES, 'UTF-8');
-  $sql = "SELECT * FROM test" ;
+  $id = htmlspecialchars($_GET['id'], ENT_QUOTES, 'UTF-8');
+  $sql = "SELECT * FROM test where id = '{$id}'" ;
 
 	// SQL実行
 	$res = $dbh->query($sql);
 
 	// 取得したデータを出力
-	
+
 	$test = $res->fetchAll(PDO::FETCH_ASSOC);
 	Http_response_code(200);
 	header("Content-type: application/json; charset=UTF-8");
