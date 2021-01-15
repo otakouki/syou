@@ -92,77 +92,77 @@ class MainActivity : AppCompatActivity() {
                         .into(image1) //ImageButtonに流し込み
                     Picasso.get()
                         //いらすとやの画像URL
-                        .load(jojo[1].img)
+                        .load("http://" + jojo[0].img)
                         .resize(300, 300) //表示サイズ指定
                         .centerCrop() //resizeで指定した範囲になるよう中央から切り出し
                         .into(image2) //ImageButtonに流し込み
 
                     Picasso.get()
                         //いらすとやの画像URL
-                        .load(jojo[2].img)
+                        .load(jojo[0].img)
                         .resize(300, 300) //表示サイズ指定
                         .centerCrop() //resizeで指定した範囲になるよう中央から切り出し
                         .into(image3) //ImageButtonに流し込み
 
                     Picasso.get()
                         //いらすとやの画像URL
-                        .load(jojo[3].img)
+                        .load(jojo[0].img)
                         .resize(300, 300) //表示サイズ指定
                         .centerCrop() //resizeで指定した範囲になるよう中央から切り出し
                         .into(image4) //ImageButtonに流し込み
                     Picasso.get()
                         //いらすとやの画像URL
-                        .load(jojo[4].img)
+                        .load(jojo[0].img)
                         .resize(300, 300) //表示サイズ指定
                         .centerCrop() //resizeで指定した範囲になるよう中央から切り出し
                         .into(image5) //ImageButtonに流し込み
 
                     Picasso.get()
                         //いらすとやの画像URL
-                        .load(jojo[5].img)
+                        .load(jojo[0].img)
                         .resize(300, 300) //表示サイズ指定
                         .centerCrop() //resizeで指定した範囲になるよう中央から切り出し
                         .into(image6) //ImageButtonに流し込み
                     Picasso.get()
                         //いらすとやの画像URL
-                        .load(jojo[6].img)
+                        .load(jojo[0].img)
                         .resize(300, 300) //表示サイズ指定
                         .centerCrop() //resizeで指定した範囲になるよう中央から切り出し
                         .into(image7) //ImageButtonに流し込み
                     Picasso.get()
                         //いらすとやの画像URL
-                        .load(jojo[7].img)
+                        .load(jojo[0].img)
                         .resize(300, 300) //表示サイズ指定
                         .centerCrop() //resizeで指定した範囲になるよう中央から切り出し
                         .into(image8) //ImageButtonに流し込み
                     Picasso.get()
                         //いらすとやの画像URL
-                        .load(jojo[8].img)
+                        .load(jojo[0].img)
                         .resize(300, 300) //表示サイズ指定
                         .centerCrop() //resizeで指定した範囲になるよう中央から切り出し
                         .into(image9) //ImageButtonに流し込み
                     Picasso.get()
                         //いらすとやの画像URL
-                        .load(jojo[9].img)
+                        .load(jojo[0].img)
                         .resize(300, 300) //表示サイズ指定
                         .centerCrop() //resizeで指定した範囲になるよう中央から切り出し
                         .into(image10) //ImageButtonに流し込み
                     Picasso.get()
                         //いらすとやの画像URL
-                        .load(jojo[10].img)
+                        .load(jojo[0].img)
                         .resize(300, 300) //表示サイズ指定
                         .centerCrop() //resizeで指定した範囲になるよう中央から切り出し
                         .into(image11) //ImageButtonに流し込み
 
                     Picasso.get()
                         //いらすとやの画像URL
-                        .load(jojo[11].img)
+                        .load(jojo[0].img)
                         .resize(300, 300) //表示サイズ指定
                         .centerCrop() //resizeで指定した範囲になるよう中央から切り出し
                         .into(image12) //ImageButtonに流し込み
                     Picasso.get()
                         //いらすとやの画像URL
-                        .load(jojo[12].img)
+                        .load(jojo[0].img)
                         .resize(300, 300) //表示サイズ指定
                         .centerCrop() //resizeで指定した範囲になるよう中央から切り出し
                         .into(image13) //ImageButtonに流し込み
