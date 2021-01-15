@@ -18,7 +18,13 @@ import retrofit2.http.Query
 import kotlin.concurrent.thread
 
 
-data class JoJo(val id: String, val name: String, val classname: String)
+data class JoJo(
+    val GenreNo: String="",
+    val GenreName: String="",
+    val Questionnaire: String="",
+    val AgeBetween_MIN: String="",
+    val AgeBetween_MAX: String="",
+    val img:String="")
 
 
 interface JoJoService {
@@ -29,8 +35,8 @@ interface JoJoService {
 //    }
 //    -------おわり-----------
 
-    @GET("api.php")
-    fun fetchJoJo(@Query("id") id: String): Call<List<JoJo>>
+    @GET("api3.php")
+    fun fetchJoJo(): Call<List<JoJo>>
 }
 fun pi(i: String, n: ImageButton) {
     val temp =Picasso.get()
@@ -68,7 +74,7 @@ class MainActivity : AppCompatActivity() {
         thread { // Retrofitはメインスレッドで処理できない
             try {
                 val service: JoJoService = retrofit.create(JoJoService::class.java)
-                val jojo = service.fetchJoJo(id = "8").execute().body()
+                val jojo = service.fetchJoJo().execute().body()
                     ?: throw IllegalStateException("bodyがnullだよ！")
                 var len: Int = jojo.size
 
@@ -80,83 +86,83 @@ class MainActivity : AppCompatActivity() {
 
                     Picasso.get()
                         //いらすとやの画像URL
-                        .load(jojo[0].classname)
+                        .load(jojo[0].img)
                         .resize(300, 300) //表示サイズ指定
                         .centerCrop() //resizeで指定した範囲になるよう中央から切り出し
                         .into(image1) //ImageButtonに流し込み
                     Picasso.get()
                         //いらすとやの画像URL
-                        .load(jojo[0].classname)
+                        .load(jojo[1].img)
                         .resize(300, 300) //表示サイズ指定
                         .centerCrop() //resizeで指定した範囲になるよう中央から切り出し
                         .into(image2) //ImageButtonに流し込み
 
                     Picasso.get()
                         //いらすとやの画像URL
-                        .load(jojo[0].classname)
+                        .load(jojo[2].img)
                         .resize(300, 300) //表示サイズ指定
                         .centerCrop() //resizeで指定した範囲になるよう中央から切り出し
                         .into(image3) //ImageButtonに流し込み
 
                     Picasso.get()
                         //いらすとやの画像URL
-                        .load(jojo[0].classname)
+                        .load(jojo[3].img)
                         .resize(300, 300) //表示サイズ指定
                         .centerCrop() //resizeで指定した範囲になるよう中央から切り出し
                         .into(image4) //ImageButtonに流し込み
                     Picasso.get()
                         //いらすとやの画像URL
-                        .load(jojo[0].classname)
+                        .load(jojo[4].img)
                         .resize(300, 300) //表示サイズ指定
                         .centerCrop() //resizeで指定した範囲になるよう中央から切り出し
                         .into(image5) //ImageButtonに流し込み
 
                     Picasso.get()
                         //いらすとやの画像URL
-                        .load(jojo[0].classname)
+                        .load(jojo[5].img)
                         .resize(300, 300) //表示サイズ指定
                         .centerCrop() //resizeで指定した範囲になるよう中央から切り出し
                         .into(image6) //ImageButtonに流し込み
                     Picasso.get()
                         //いらすとやの画像URL
-                        .load(jojo[0].classname)
+                        .load(jojo[6].img)
                         .resize(300, 300) //表示サイズ指定
                         .centerCrop() //resizeで指定した範囲になるよう中央から切り出し
                         .into(image7) //ImageButtonに流し込み
                     Picasso.get()
                         //いらすとやの画像URL
-                        .load(jojo[0].classname)
+                        .load(jojo[7].img)
                         .resize(300, 300) //表示サイズ指定
                         .centerCrop() //resizeで指定した範囲になるよう中央から切り出し
                         .into(image8) //ImageButtonに流し込み
                     Picasso.get()
                         //いらすとやの画像URL
-                        .load(jojo[0].classname)
+                        .load(jojo[8].img)
                         .resize(300, 300) //表示サイズ指定
                         .centerCrop() //resizeで指定した範囲になるよう中央から切り出し
                         .into(image9) //ImageButtonに流し込み
                     Picasso.get()
                         //いらすとやの画像URL
-                        .load(jojo[0].classname)
+                        .load(jojo[9].img)
                         .resize(300, 300) //表示サイズ指定
                         .centerCrop() //resizeで指定した範囲になるよう中央から切り出し
                         .into(image10) //ImageButtonに流し込み
                     Picasso.get()
                         //いらすとやの画像URL
-                        .load(jojo[0].classname)
+                        .load(jojo[10].img)
                         .resize(300, 300) //表示サイズ指定
                         .centerCrop() //resizeで指定した範囲になるよう中央から切り出し
                         .into(image11) //ImageButtonに流し込み
 
                     Picasso.get()
                         //いらすとやの画像URL
-                        .load(jojo[0].classname)
+                        .load(jojo[11].img)
                         .resize(300, 300) //表示サイズ指定
                         .centerCrop() //resizeで指定した範囲になるよう中央から切り出し
                         .into(image12) //ImageButtonに流し込み
                     Picasso.get()
                         //いらすとやの画像URL
-                        .load(jojo[0].classname)
+                        .load(jojo[12].img)
                         .resize(300, 300) //表示サイズ指定
                         .centerCrop() //resizeで指定した範囲になるよう中央から切り出し
                         .into(image13) //ImageButtonに流し込み
