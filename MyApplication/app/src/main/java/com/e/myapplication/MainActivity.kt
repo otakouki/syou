@@ -336,7 +336,41 @@ class MainActivity : AppCompatActivity() {
 
                     })
 
-                    
+                    var flag1 = false
+                    var flag2 = false
+                    var flag3 = false
+                    var flag4 = false
+
+                    image1.setOnLongClickListener(OnLongClickListener {
+                        flag1 = true
+                        true // 戻り値をtrueにするとOnClickイベントは発生しない
+                    })
+
+                    image2.setOnLongClickListener(OnLongClickListener {
+                        flag2 = true
+                        true // 戻り値をtrueにするとOnClickイベントは発生しない
+                    })
+
+                    image3.setOnLongClickListener(OnLongClickListener {
+                        flag3 = true
+                        true // 戻り値をtrueにするとOnClickイベントは発生しない
+                    })
+
+                    image4.setOnLongClickListener(OnLongClickListener {
+                        flag4 = true
+                        true // 戻り値をtrueにするとOnClickイベントは発生しない
+                    })
+
+                    button3.setOnClickListener(View.OnClickListener {
+                        if(flag1 == true){
+                            Picasso.get()
+                                //いらすとやの画像URL
+                                .load("http://" + jojo[1].img)
+                                .resize(300, 300) //表示サイズ指定
+                                .centerCrop() //resizeで指定した範囲になるよう中央から切り出し
+                                .into(image1) //ImageButtonに流し込み
+                        }
+                    })
 
 
 
