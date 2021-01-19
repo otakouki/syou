@@ -5,6 +5,7 @@
     android:id="@+id/linear"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:foregroundTint="@color/colorAccent"
     android:orientation="vertical"
     tools:context=".MainActivity">
 
@@ -21,7 +22,8 @@
             <TextView
                 android:id="@+id/TextView"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:foregroundTint="#F44336" />
 
             <TextView
                 android:id="@+id/DescriptionTextView"

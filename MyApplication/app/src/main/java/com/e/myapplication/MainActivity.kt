@@ -376,6 +376,11 @@ class MainActivity : AppCompatActivity() {
 
                 })
 
+                button2.setOnClickListener(View.OnClickListener {
+                    val intent = Intent(this, MainActivity3::class.java)
+                    startActivity(intent)
+                })
+
 
             } catch (e: Exception) {
                 Log.d("mopi", "debug $e")
