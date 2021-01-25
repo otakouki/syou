@@ -24,7 +24,7 @@ data class JoJo2(val GenreNo: String="", val TypeID: String="", val ID: String="
 interface JoJoService2 {
 
     @GET("api2.php")
-//    fun fetchJoJo(@Query("id") id: String): Call<List<JoJo>>
+//    fun fetchJoJo(@Query("id") id: String): ll<List<JoJo>>
     fun fetchJoJo(@Query("GenreNo") GenreNo: String): Call<List<JoJo2>>
 }
 

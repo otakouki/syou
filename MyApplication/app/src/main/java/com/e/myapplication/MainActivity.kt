@@ -1,21 +1,23 @@
 package com.e.myapplication
 
-import android.R.id
+import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.os.Handler
 import android.util.Log
 import android.view.View
 import android.view.View.OnLongClickListener
 import android.widget.ImageButton
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.app.AppLaunchChecker
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.activity_main.*
 import retrofit2.Call
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.GET
+import java.util.*
 import kotlin.concurrent.thread
 
 
@@ -55,6 +57,30 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        // "DataStore"という名前でインスタンスを生成
+        val dataStore: SharedPreferences = getSharedPreferences("DataStore", Context.MODE_PRIVATE)
+        if (AppLaunchChecker.hasStartedFromLauncher(this)) {
+            textView8.text = "2回目以降"
+
+
+            //生成したインスタンスを使って書き込む
+            val editor = dataStore.edit()
+            //”Check”にTrueを書き込む
+            editor.putBoolean("Check",true)
+
+            //UUIDを使ってランダム文字列生成、書き込み
+            val uuidString = UUID.randomUUID().toString()
+            editor.putString("UUID",uuidString)
+
+            //コミットして処理終了
+            editor.apply()
+            //第2引数はデータが取得できなかったときに使用する値
+            dataStore.getBoolean("Check",false)
+        } else {
+            textView8.text = "はじめてアプリを起動した"
+        }
+        AppLaunchChecker.onActivityCreate(this)
 
 
         val retrofit = Retrofit.Builder()
