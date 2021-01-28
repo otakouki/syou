@@ -10,6 +10,6 @@ class MainActivity4 : AppCompatActivity() {
         setContentView(R.layout.activity_main4)
 
         val text = intent.getStringExtra("TEXT_KEY2")
-        text1.setText("${text.toString()}")
+        text1.setText("あなたにおすすめの趣味は、${text.toString()}です。")
     }
 }

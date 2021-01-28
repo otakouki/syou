@@ -55,10 +55,10 @@ class MainActivity : AppCompatActivity() {
         if (AppLaunchChecker.hasStartedFromLauncher(this)) {
 
 
-textView8.text = dataStore.getString("UUID","デフォルト")
+//textView8.text = dataStore.getString("UUID","デフォルト")
 
         } else {
-            textView8.text = "はじめてアプリを起動した"
+//            textView8.text = "はじめてアプリを起動した"
             //生成したインスタンスを使って書き込む
             val editor = dataStore.edit()
             //”Check”にTrueを書き込む
@@ -72,7 +72,7 @@ textView8.text = dataStore.getString("UUID","デフォルト")
             editor.apply()
             //第2引数はデータが取得できなかったときに使用する値
             dataStore.getBoolean("Check",false)
-            textView8.text = uuidString
+//            textView8.text = uuidString
         }
         AppLaunchChecker.onActivityCreate(this)
 
