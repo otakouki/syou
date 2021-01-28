@@ -41,16 +41,8 @@ interface JoJoService {
     @GET("api3.php")
     fun fetchJoJo(): Call<List<JoJo>>
 }
-fun pi(i: String, n: ImageButton) {
-    val temp =Picasso.get()
-        //いらすとやの画像URL
-        .load(i)
-        .resize(300, 300) //表示サイズ指定
-        .centerCrop() //resizeで指定した範囲になるよう中央から切り出し
-        .into(n)
-    return temp
 
-}
+
 
 class MainActivity : AppCompatActivity() {
 
@@ -61,9 +53,12 @@ class MainActivity : AppCompatActivity() {
         // "DataStore"という名前でインスタンスを生成
         val dataStore: SharedPreferences = getSharedPreferences("DataStore", Context.MODE_PRIVATE)
         if (AppLaunchChecker.hasStartedFromLauncher(this)) {
-            textView8.text = "2回目以降"
 
 
+textView8.text = dataStore.getString("UUID","デフォルト")
+
+        } else {
+            textView8.text = "はじめてアプリを起動した"
             //生成したインスタンスを使って書き込む
             val editor = dataStore.edit()
             //”Check”にTrueを書き込む
@@ -77,8 +72,7 @@ class MainActivity : AppCompatActivity() {
             editor.apply()
             //第2引数はデータが取得できなかったときに使用する値
             dataStore.getBoolean("Check",false)
-        } else {
-            textView8.text = "はじめてアプリを起動した"
+            textView8.text = uuidString
         }
         AppLaunchChecker.onActivityCreate(this)
 
@@ -119,77 +113,77 @@ class MainActivity : AppCompatActivity() {
                         .into(image1) //ImageButtonに流し込み
                     Picasso.get()
                         //いらすとやの画像URL
-                        .load("http://" + jojo[0].img)
+                        .load("http://" + jojo[1].img)
                         .resize(300, 300) //表示サイズ指定
                         .centerCrop() //resizeで指定した範囲になるよう中央から切り出し
                         .into(image2) //ImageButtonに流し込み
 
                     Picasso.get()
                         //いらすとやの画像URL
-                        .load("http://" + jojo[0].img)
+                        .load("http://" + jojo[2].img)
                         .resize(300, 300) //表示サイズ指定
                         .centerCrop() //resizeで指定した範囲になるよう中央から切り出し
                         .into(image3) //ImageButtonに流し込み
 
                     Picasso.get()
                         //いらすとやの画像URL
-                        .load("http://" + jojo[0].img)
+                        .load("http://" + jojo[3].img)
                         .resize(300, 300) //表示サイズ指定
                         .centerCrop() //resizeで指定した範囲になるよう中央から切り出し
                         .into(image4) //ImageButtonに流し込み
                     Picasso.get()
                         //いらすとやの画像URL
-                        .load("http://" + jojo[0].img)
+                        .load("http://" + jojo[4].img)
                         .resize(300, 300) //表示サイズ指定
                         .centerCrop() //resizeで指定した範囲になるよう中央から切り出し
                         .into(image5) //ImageButtonに流し込み
 
                     Picasso.get()
                         //いらすとやの画像URL
-                        .load("http://" + jojo[0].img)
+                        .load("http://" + jojo[5].img)
                         .resize(300, 300) //表示サイズ指定
                         .centerCrop() //resizeで指定した範囲になるよう中央から切り出し
                         .into(image6) //ImageButtonに流し込み
                     Picasso.get()
                         //いらすとやの画像URL
-                        .load("http://" + jojo[0].img)
+                        .load("http://" + jojo[6].img)
                         .resize(300, 300) //表示サイズ指定
                         .centerCrop() //resizeで指定した範囲になるよう中央から切り出し
                         .into(image7) //ImageButtonに流し込み
                     Picasso.get()
                         //いらすとやの画像URL
-                        .load("http://" + jojo[0].img)
+                        .load("http://" + jojo[7].img)
                         .resize(300, 300) //表示サイズ指定
                         .centerCrop() //resizeで指定した範囲になるよう中央から切り出し
                         .into(image8) //ImageButtonに流し込み
                     Picasso.get()
                         //いらすとやの画像URL
-                        .load("http://" + jojo[0].img)
+                        .load("http://" + jojo[8].img)
                         .resize(300, 300) //表示サイズ指定
                         .centerCrop() //resizeで指定した範囲になるよう中央から切り出し
                         .into(image9) //ImageButtonに流し込み
                     Picasso.get()
                         //いらすとやの画像URL
-                        .load("http://" + jojo[0].img)
+                        .load("http://" + jojo[9].img)
                         .resize(300, 300) //表示サイズ指定
                         .centerCrop() //resizeで指定した範囲になるよう中央から切り出し
                         .into(image10) //ImageButtonに流し込み
                     Picasso.get()
                         //いらすとやの画像URL
-                        .load("http://" + jojo[0].img)
+                        .load("http://" + jojo[10].img)
                         .resize(300, 300) //表示サイズ指定
                         .centerCrop() //resizeで指定した範囲になるよう中央から切り出し
                         .into(image11) //ImageButtonに流し込み
 
                     Picasso.get()
                         //いらすとやの画像URL
-                        .load("http://" + jojo[0].img)
+                        .load("http://" + jojo[11].img)
                         .resize(300, 300) //表示サイズ指定
                         .centerCrop() //resizeで指定した範囲になるよう中央から切り出し
                         .into(image12) //ImageButtonに流し込み
                     Picasso.get()
                         //いらすとやの画像URL
-                        .load("http://" + jojo[0].img)
+                        .load("http://" + jojo[12].img)
                         .resize(300, 300) //表示サイズ指定
                         .centerCrop() //resizeで指定した範囲になるよう中央から切り出し
                         .into(image13) //ImageButtonに流し込み
@@ -362,41 +356,113 @@ class MainActivity : AppCompatActivity() {
 
                     })
 
-                    var flag1 = false
-                    var flag2 = false
-                    var flag3 = false
-                    var flag4 = false
+                    var flag1 = true
+                    var flag2 = true
+                    var flag3 = true
+                    var flag4 = true
+                    var flag5 = true
+                    var flag6 = true
+                    var flag7 = true
+                    var flag8 = true
+                    var flag9 = true
+                    var flag10 = true
+                    var flag11 = true
+                    var flag12 = true
+                    var flag13 = true
 
-                    image1.setOnLongClickListener(OnLongClickListener {
-                        flag1 = true
-                        true // 戻り値をtrueにするとOnClickイベントは発生しない
-                    })
+                    image1.setOnLongClickListener { // 下側のImageViewのidをimageViewとした例
+                        if(flag1 == true) {
+                            // この中にボタンが長押しされた時の処理を記述する
+//                            image1.setImageResource(R.drawable.game)
+                            Picasso.get()
+                                //いらすとやの画像URL
+                                .load(R.drawable.game)
+                                .resize(300, 300) //表示サイズ指定
+                                .centerCrop() //resizeで指定した範囲になるよう中央から切り出し
+                                .into(image1) //ImageButtonに流し込み
+                            flag1 = false
+                        }else{
+                            Picasso.get()
+                                //いらすとやの画像URL
+                                .load("http://" + jojo[0].img)
+                                .resize(300, 300) //表示サイズ指定
+                                .centerCrop() //resizeで指定した範囲になるよう中央から切り出し
+                                .into(image1) //ImageButtonに流し込み
+                            flag1 = true
+                        }
+                        true
+                    }
 
-                    image2.setOnLongClickListener(OnLongClickListener {
-                        flag2 = true
-                        true // 戻り値をtrueにするとOnClickイベントは発生しない
-                    })
 
-                    image3.setOnLongClickListener(OnLongClickListener {
-                        flag3 = true
-                        true // 戻り値をtrueにするとOnClickイベントは発生しない
-                    })
-
-                    image4.setOnLongClickListener(OnLongClickListener {
-                        flag4 = true
-                        true // 戻り値をtrueにするとOnClickイベントは発生しない
-                    })
-
-                    button3.setOnClickListener(View.OnClickListener {
-                        if(flag1 == true){
+                    image2.setOnLongClickListener { // 下側のImageViewのidをimageViewとした例
+                        if(flag2 == true) {
+                            // この中にボタンが長押しされた時の処理を記述する
+//                            image1.setImageResource(R.drawable.game)
+                            Picasso.get()
+                                //いらすとやの画像URL
+                                .load(R.drawable.skil)
+                                .resize(300, 300) //表示サイズ指定
+                                .centerCrop() //resizeで指定した範囲になるよう中央から切り出し
+                                .into(image2) //ImageButtonに流し込み
+                            flag2 = false
+                        }else{
                             Picasso.get()
                                 //いらすとやの画像URL
                                 .load("http://" + jojo[1].img)
                                 .resize(300, 300) //表示サイズ指定
                                 .centerCrop() //resizeで指定した範囲になるよう中央から切り出し
-                                .into(image1) //ImageButtonに流し込み
+                                .into(image2) //ImageButtonに流し込み
+                            flag2 = true
                         }
-                    })
+                        true
+                    }
+
+                    image3.setOnLongClickListener { // 下側のImageViewのidをimageViewとした例
+                        if(flag3 == true) {
+                            // この中にボタンが長押しされた時の処理を記述する
+//                            image1.setImageResource(R.drawable.game)
+                            Picasso.get()
+                                //いらすとやの画像URL
+                                .load(R.drawable.sports)
+                                .resize(300, 300) //表示サイズ指定
+                                .centerCrop() //resizeで指定した範囲になるよう中央から切り出し
+                                .into(image3) //ImageButtonに流し込み
+                            flag3 = false
+                        }else{
+                            Picasso.get()
+                                //いらすとやの画像URL
+                                .load("http://" + jojo[2].img)
+                                .resize(300, 300) //表示サイズ指定
+                                .centerCrop() //resizeで指定した範囲になるよう中央から切り出し
+                                .into(image3) //ImageButtonに流し込み
+                            flag3 = true
+                        }
+                        true
+                    }
+
+                    image4.setOnLongClickListener { // 下側のImageViewのidをimageViewとした例
+                        if(flag4 == true) {
+                            // この中にボタンが長押しされた時の処理を記述する
+//                            image1.setImageResource(R.drawable.game)
+                            Picasso.get()
+                                //いらすとやの画像URL
+                                .load(R.drawable.nurturing)
+                                .resize(300, 300) //表示サイズ指定
+                                .centerCrop() //resizeで指定した範囲になるよう中央から切り出し
+                                .into(image4) //ImageButtonに流し込み
+                            flag4 = false
+                        }else{
+                            Picasso.get()
+                                //いらすとやの画像URL
+                                .load("http://" + jojo[3].img)
+                                .resize(300, 300) //表示サイズ指定
+                                .centerCrop() //resizeで指定した範囲になるよう中央から切り出し
+                                .into(image4) //ImageButtonに流し込み
+                            flag4 = true
+                        }
+                        true
+                    }
+
 
 
 
@@ -404,6 +470,11 @@ class MainActivity : AppCompatActivity() {
 
                 button2.setOnClickListener(View.OnClickListener {
                     val intent = Intent(this, MainActivity3::class.java)
+                    startActivity(intent)
+                })
+
+                button1.setOnClickListener(View.OnClickListener {
+                    val intent = Intent(this,MainActivity5::class.java)
                     startActivity(intent)
                 })
 
