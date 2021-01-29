@@ -17,6 +17,7 @@ import retrofit2.Call
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.GET
+import retrofit2.http.Query
 import java.util.*
 import kotlin.concurrent.thread
 
@@ -28,7 +29,6 @@ data class JoJo(
     val AgeBetween_MIN: String="",
     val AgeBetween_MAX: String="",
     val img:String="")
-
 
 interface JoJoService {
 //    -------レスポンスの中身-------
@@ -55,7 +55,6 @@ class MainActivity : AppCompatActivity() {
         if (AppLaunchChecker.hasStartedFromLauncher(this)) {
 
 
-//textView8.text = dataStore.getString("UUID","デフォルト")
 
         } else {
 //            textView8.text = "はじめてアプリを起動した"
@@ -369,11 +368,12 @@ class MainActivity : AppCompatActivity() {
                     var flag11 = true
                     var flag12 = true
                     var flag13 = true
-
-                    image1.setOnLongClickListener { // 下側のImageViewのidをimageViewとした例
+                        image1.setOnLongClickListener { // 下側のImageViewのidをimageViewとした例
                         if(flag1 == true) {
                             // この中にボタンが長押しされた時の処理を記述する
 //                            image1.setImageResource(R.drawable.game)
+
+
                             Picasso.get()
                                 //いらすとやの画像URL
                                 .load(R.drawable.game)
@@ -381,6 +381,8 @@ class MainActivity : AppCompatActivity() {
                                 .centerCrop() //resizeで指定した範囲になるよう中央から切り出し
                                 .into(image1) //ImageButtonに流し込み
                             flag1 = false
+
+
                         }else{
                             Picasso.get()
                                 //いらすとやの画像URL

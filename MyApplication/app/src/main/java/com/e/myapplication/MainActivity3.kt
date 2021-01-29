@@ -149,14 +149,17 @@ class MainActivity3 : AppCompatActivity() {
                 else -> textView.text = "エラー"
             }
             //val textView = findViewById<TextView>(R.id.textView14)
+if(text == ""){
 
-            val intent = Intent(this, MainActivity4::class.java)
-            //textは受け渡す変数
-            //val text = rg1 + "," + rg2 + "," + rg3 + "," + rg4 + "," + rg5 + "," + rg6
-            //intent変数をつなげる(第一引数はキー，第二引数は渡したい変数)
-            intent.putExtra("TEXT_KEY2", text)
-            //画面遷移を開始
-            startActivity(intent)
+}else {
+    val intent = Intent(this, MainActivity4::class.java)
+    //textは受け渡す変数
+    //val text = rg1 + "," + rg2 + "," + rg3 + "," + rg4 + "," + rg5 + "," + rg6
+    //intent変数をつなげる(第一引数はキー，第二引数は渡したい変数)
+    intent.putExtra("TEXT_KEY2", text)
+    //画面遷移を開始
+    startActivity(intent)
+}
 
         })
     }
