@@ -13,9 +13,9 @@ class MainActivity4 : AppCompatActivity() {
 
         val text = intent.getStringExtra("TEXT_KEY2")
         text1.setText("あなたにおすすめの趣味は、${text.toString()}です。")
-        button4.setOnClickListener(View.OnClickListener {
+
+        button3.setOnClickListener(View.OnClickListener {
             val intent = Intent(this, MainActivity::class.java)
-            //画面遷移を開始
             startActivity(intent)
         })
     }
