@@ -1,5 +1,8 @@
 package com.e.myapplication
 
+import android.graphics.Color
+import android.graphics.Path
+import android.graphics.Typeface
 import android.media.audiofx.AudioEffect
 import android.os.Bundle
 import android.os.Handler
@@ -83,6 +86,9 @@ class MainActivity2 : AppCompatActivity() {
                         val textView: TextView= TextView(this)
                         var Namedata=jojo[i].Name
                         textView.text = Namedata
+                        textView.setTypeface(Typeface.DEFAULT_BOLD)
+                        textView.setTextColor(Color.RED)
+                        textView.setTextSize(20.0f)
                         layout.addView(textView)
 
                         //趣味の説明表示
